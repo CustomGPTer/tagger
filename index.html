@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tagger: a free, private NFC tag reader, writer and automation app for Android</title>
+<meta name="description" content="Tagger reads, writes, protects and automates NFC tags in one app: chip details, a genuine-chip check, link safety checks, passwords, encrypted tags, a security audit, dumps, batch tagging and tags that run tasks on your phone. Encrypted, no adverts, no account.">
+<meta name="author" content="Jonathan Jackson">
+<link rel="canonical" href="https://customgpter.github.io/tagger/">
+<meta name="theme-color" content="#f3f6f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#080b10" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tagger">
+<meta property="og:title" content="Tagger: a free, private NFC tag reader, writer and automation app for Android">
+<meta property="og:description" content="Tagger reads, writes, protects and automates NFC tags in one app: chip details, a genuine-chip check, link safety checks, passwords, encrypted tags, a security audit, dumps, batch tagging and tags that run tasks on your phone. Encrypted, no adverts, no account.">
+<meta property="og:url" content="https://customgpter.github.io/tagger/">
+<meta property="og:image" content="https://customgpter.github.io/tagger/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tagger&#x27;s tag screen: an NTAG215 with its ID, memory used, and the link, Wi-Fi network and contact stored on it">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+<link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./assets/site.css?v=1">
+<link rel="stylesheet" href="./assets/house.css?v=1">
+<link rel="stylesheet" href="./assets/apps-list.css?v=1">
+<script src="./assets/apps-list.js?v=1" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Tagger","url":"https://customgpter.github.io/tagger/","description":"Tagger reads, writes, protects and automates NFC tags in one app: chip details, a genuine-chip check, link safety checks, passwords, encrypted tags, a security audit, dumps, batch tagging and tags that run tasks on your phone. Encrypted, no adverts, no account.","applicationCategory":"UtilitiesApplication","operatingSystem":"Android 10 or later","softwareVersion":"1.0.0","downloadUrl":"https://github.com/CustomGPTer/tagger/releases/latest/download/Tagger.apk","releaseNotes":"https://customgpter.github.io/tagger/releases.html","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"inLanguage":"en-GB","image":"https://customgpter.github.io/tagger/assets/og.png","featureList":["Everything about the chip","Genuine chip check","Link safety","Encrypted history","16 record types","Checked before and after","Saved tags","Batch tagging","Passwords and locks","Encrypted tags","Security audit","Memory and dumps"],"author":{"@type":"Person","name":"Jonathan Jackson"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Tagger really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. There is no paid version, no subscription and no adverts, and every tool, including automation, is free."}},{"@type":"Question","name":"Is it on Google Play?","acceptedAnswer":{"@type":"Answer","text":"No. Tagger is a personal project and is downloaded from this site as an Android app file. It needs Android 10 or later and a phone with NFC."}},{"@type":"Question","name":"Which tags does it work with?","acceptedAnswer":{"@type":"Answer","text":"It reads any tag your phone can read. Writing works on all NDEF tags. Passwords, the memory map, dumps and formatting work on NTAG and Ultralight tags, the ones almost everyone uses."}},{"@type":"Question","name":"Can it read my bank card?","acceptedAnswer":{"@type":"Answer","text":"Only the public details any reader can see, such as the card type. Bank, transport and ID cards are protected, and Tagger does not try to get round that."}},{"@type":"Question","name":"Can it copy any card?","acceptedAnswer":{"@type":"Answer","text":"No. Tagger copies what is stored on a tag to another tag, but a chip's own ID cannot be copied, and it does not crack MIFARE Classic keys."}},{"@type":"Question","name":"Do I need a second app to run tasks?","acceptedAnswer":{"@type":"Answer","text":"No. Reading, writing and automation are all in Tagger."}},{"@type":"Question","name":"Why does it have internet access?","acceptedAnswer":{"@type":"Answer","text":"Only for web-request and Wake-on-LAN steps you build into your own tasks. Every request is listed in Automate, Logs, Network. Nothing else goes online."}},{"@type":"Question","name":"What is power mode?","acceptedAnswer":{"@type":"Answer","text":"Android does not let apps switch Wi-Fi, Bluetooth, mobile data or flight mode by themselves, so Tagger opens Android's own switch for you. With the free Shizuku app, power mode switches them silently. It is optional."}},{"@type":"Question","name":"Can I back up my tags and tasks?","acceptedAnswer":{"@type":"Answer","text":"Yes. Settings, Backup saves an encrypted file, protected with a password you choose, wherever you pick."}},{"@type":"Question","name":"Does it work on an iPhone?","acceptedAnswer":{"@type":"Answer","text":"No. Tagger is for Android phones and tablets only."}},{"@type":"Question","name":"Who made it?","acceptedAnswer":{"@type":"Answer","text":"Tagger is made by Jonathan Jackson, an independent developer in the United Kingdom."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+<div class="wrap">
+<a class="brand" href="./" aria-label="Tagger home"><svg viewBox="0 0 108 108" aria-hidden="true"><defs><radialGradient id="tgg" cx="54" cy="40" r="80" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#17222E"/><stop offset="1" stop-color="#080B10"/></radialGradient></defs><rect width="108" height="108" rx="24" fill="url(#tgg)"/><g transform="translate(54 54) scale(1.25) translate(-54 -54)"><rect x="25" y="25" width="58" height="58" rx="9.5" fill="none" stroke="#2DE1C2" stroke-opacity="1" stroke-width="2.6"/><rect x="30" y="30" width="48" height="48" rx="7.6" fill="none" stroke="#2DE1C2" stroke-opacity=".9" stroke-width="2.6"/><rect x="35" y="35" width="38" height="38" rx="5.8" fill="none" stroke="#2DE1C2" stroke-opacity=".75" stroke-width="2.6"/><rect x="40" y="40" width="28" height="28" rx="4.2" fill="none" stroke="#2DE1C2" stroke-opacity=".6" stroke-width="2.6"/><rect x="47.8" y="47.8" width="12.4" height="12.4" rx="2.2" fill="#FFB547"/><rect x="51.6" y="51.6" width="4.8" height="4.8" rx="0.9" fill="#0B0F14"/></g></svg><span>Tagger</span></a>
+<nav aria-label="Main"><ul><li><a href="./#features">Features</a></li><li><a href="./compare.html">Compare</a></li><li><a href="./releases.html">Releases</a></li><li><a class="more-apps" href="./more-apps.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></svg>More apps</a></li></ul></nav>
+<a class="button small" href="./#download"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></svg>Download</a>
+</div>
+</header>
+<main id="main">
+<div class="hero">
+<div class="wrap hero-grid">
+<div class="hero-copy">
+<h1>Read, write and automate any NFC tag.</h1>
+<p class="lede">Tagger shows everything about a tag the moment you hold it to your phone: the chip, its ID, how much space is left, whether it is locked or password protected, and whether the chip is a genuine NXP part. Links are checked for scams before anything opens.</p><p class="lede">Write links, Wi-Fi, contacts, places, events and more, protect tags with passwords or a passphrase only Tagger can read, and make tags that run tasks on your phone. Every pro tool is free, and everything Tagger keeps is encrypted on your phone.</p>
+
+<div class="gate-scope"><div class="law-box" data-gate><label><input type="checkbox"> I understand and will use this app within the law</label><p>Tagger can copy, lock, password-protect and emulate tags. <a href="terms.html#law">What the law says</a></p><noscript><p>Turn on JavaScript to tick the box and download.</p></noscript></div><p class="get" id="download"><a class="button" data-href="https://github.com/CustomGPTer/tagger/releases/latest/download/Tagger.apk" aria-disabled="true" role="link" tabindex="-1"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></svg>Download for Android</a><a class="aside" href="#install">How to install</a></p></div>
+<ul class="pills"><li>Version 1.0.0</li><li>Android 10 or later</li><li>3.9 MB</li></ul>
+<p class="facts">Free, with nothing to unlock. No adverts, no account with the developer, no tracking. <a href="compare.html">Compare</a> or read the <a href="releases.html">release notes</a>.</p>
+<p class="facts">Chrome may say the file might be harmful. It shows this for app files that do not come from Google Play. Choose Download anyway.</p>
+</div>
+<div class="hero-phone"><div class="phone"><img src="./assets/screens/tag.png" alt="A tag read: the chip, its ID, memory used, protection, and every record on it with one-tap actions." width="393" height="852" fetchpriority="high"></div></div>
+</div>
+</div>
+
+<section class="promises" aria-label="In short">
+<div class="wrap"><ul><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.6 12.4l2.3 2.3 4.5-4.9"/></svg><span><b>Every tool free</b><span>Nothing to buy and nothing locked.</span></span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.6 12.4l2.3 2.3 4.5-4.9"/></svg><span><b>No adverts</b><span>None in the app and none on this site.</span></span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.6 12.4l2.3 2.3 4.5-4.9"/></svg><span><b>Encrypted</b><span>History, saved tags and tasks are encrypted on your phone.</span></span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.6 12.4l2.3 2.3 4.5-4.9"/></svg><span><b>No account</b><span>Nothing to sign up for.</span></span></li></ul></div>
+</section>
+
+<section id="screens" aria-labelledby="screens-h">
+<div class="wrap">
+<h2 id="screens-h">A look inside</h2>
+<p class="intro">These are the real screens, drawn from the app&#x27;s own code with made-up tags. Swipe or scroll sideways to see them all.</p>
+<div class="gallery" tabindex="0" role="region" aria-label="Screens from Tagger"><figure class="shot"><div class="phone"><img src="./assets/screens/tag.png" alt="A tag read: the chip, its ID, memory used, protection, and every record on it with one-tap actions." width="393" height="852" loading="eager" decoding="async"></div><figcaption>A tag read: the chip, its ID, memory used, protection, and every record on it with one-tap actions.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/scan.png" alt="Scan: hold any tag to your phone. Recent scans are kept encrypted for 30 days, or as long as you choose." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Scan: hold any tag to your phone. Recent scans are kept encrypted for 30 days, or as long as you choose.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/write.png" alt="Write: build a tag from 16 record types, reorder them, and see which chips it fits before you write." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Write: build a tag from 16 record types, reorder them, and see which chips it fits before you write.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/automate.png" alt="Automate: tasks a tag runs on your phone, with seven ready-made templates to start from." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Automate: tasks a tag runs on your phone, with seven ready-made templates to start from.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/task.png" alt="A task with if and otherwise blocks: time windows, a question, a web request and Do Not Disturb." width="393" height="852" loading="eager" decoding="async"></div><figcaption>A task with if and otherwise blocks: time windows, a question, a web request and Do Not Disturb.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/tools.png" alt="Tools: copy, erase, format, lock, passwords, encrypted tags, genuine check, audit, memory map, dumps, batch, QR and emulation." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Tools: copy, erase, format, lock, passwords, encrypted tags, genuine check, audit, memory map, dumps, batch, QR and emulation.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/audit.png" alt="Security audit: a grade for the tag, what makes it easy to tamper with, and the fix for each." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Security audit: a grade for the tag, what makes it easy to tamper with, and the fix for each.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/genuine.png" alt="Genuine chip check: NXP&#x27;s factory signature tested on the phone, to spot copies and look-alike chips." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Genuine chip check: NXP&#x27;s factory signature tested on the phone, to spot copies and look-alike chips.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/link.png" alt="Link check: look-alike addresses and scam words are flagged before a link opens." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Link check: look-alike addresses and scam words are flagged before a link opens.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/encrypt.png" alt="Encrypted tag: content locked with AES-256 and a passphrase. Other apps only see scrambled data." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Encrypted tag: content locked with AES-256 and a passphrase. Other apps only see scrambled data.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/daylight.png" alt="Daylight theme. Tagger also has Graphite, Midnight and Match phone." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Daylight theme. Tagger also has Graphite, Midnight and Match phone.</figcaption></figure></div>
+</div>
+</section>
+
+<section id="how" aria-labelledby="how-h">
+<div class="wrap">
+<h2 id="how-h">How it works</h2>
+<p class="intro">Tagger talks to tags through your phone's own NFC reader. Everything it works out happens on your phone.</p>
+<ol class="steps"><li><h3>Hold a tag</h3><p>Hold any tag or card flat against the middle of the back of your phone. Tagger shows what it is and what is on it.</p></li><li><h3>Write or protect it</h3><p>Build what you want on the Write tab, or use the Tools tab to copy, lock, password-protect or encrypt it.</p></li><li><h3>Make it do things</h3><p>On the Automate tab, build a task and write it to a tag or link it to one. Tap the tag and your phone does the rest.</p></li></ol>
+</div>
+</section>
+
+<section id="features" aria-labelledby="features-h">
+<div class="wrap">
+<h2 id="features-h">Everything is in, and all of it is free</h2>
+<p class="intro">Nothing below is held back for a paid tier, because there is no paid tier.</p>
+<div class="groups"><div class="group"><h3>Read</h3><dl><div><dt>Everything about the chip</dt><dd>Maker, type, ID, technologies, memory used and free, and whether it is locked or password protected.</dd></div><div><dt>Genuine chip check</dt><dd>NXP's factory signature checked on the phone for NTAG21x and Ultralight EV1 chips.</dd></div><div><dt>Link safety</dt><dd>Look-alike addresses, scam words and hidden redirects flagged before anything opens.</dd></div><div><dt>Encrypted history</dt><dd>Scans kept 30 days by default, or as long as you choose, encrypted on the phone.</dd></div></dl></div><div class="group"><h3>Write</h3><dl><div><dt>16 record types</dt><dd>Links, text, Wi-Fi, contacts, phone, SMS, email, places, events, apps, Bluetooth, social profiles and more.</dd></div><div><dt>Checked before and after</dt><dd>Tagger shows which chips your records fit, then reads the tag back to prove it worked.</dd></div><div><dt>Saved tags</dt><dd>Keep what you write and write it again in a tap.</dd></div><div><dt>Batch tagging</dt><dd>Numbered tags for equipment, stock and assets, one tap per tag, with a spreadsheet log.</dd></div></dl></div><div class="group"><h3>Protect and inspect</h3><dl><div><dt>Passwords and locks</dt><dd>Set and remove tag passwords, or lock a tag permanently.</dd></div><div><dt>Encrypted tags</dt><dd>AES-256 with a passphrase. Only Tagger, with the passphrase, can read them.</dd></div><div><dt>Security audit</dt><dd>A grade for each tag and a fix for each weakness found.</dd></div><div><dt>Memory and dumps</dt><dd>A memory map, raw commands, full dumps and a side-by-side compare.</dd></div></dl></div><div class="group"><h3>Automate</h3><dl><div><dt>44 actions and conditions</dt><dd>Sound, Do Not Disturb, brightness, torch, apps, links, alarms, timers, messages, web requests, Wake-on-LAN and more.</dd></div><div><dt>If, otherwise and variables</dt><dd>Run steps only at certain times, on certain days, on Wi-Fi, or after asking you.</dd></div><div><dt>Signed task tags</dt><dd>Your own tags run straight away. Anyone else's shows its steps first and asks.</dd></div><div><dt>Without a tag</dt><dd>Run tasks from a widget, a home-screen shortcut or a Quick Settings tile.</dd></div></dl></div></div>
+</div>
+</section>
+
+<section id="privacy" aria-labelledby="privacy-h">
+<div class="wrap">
+<h2 id="privacy-h">Private by design</h2>
+<ul class="plain"><li><h3>Encrypted on the phone</h3><p>History, saved tags, tasks and logs are encrypted with a key held in the phone's secure hardware.</p></li><li><h3>Online only for your own steps</h3><p>Tagger only goes online for web-request and Wake-on-LAN steps you build, and lists every one.</p></li><li><h3>Nothing runs by surprise</h3><p>A task tag you did not make shows its steps and asks before anything happens.</p></li></ul>
+</div>
+</section>
+
+<section id="law" aria-labelledby="law-h" class="law-band">
+<div class="wrap">
+<h2 id="law-h">Use it within the law</h2>
+<p class="intro">Tagger is for your own tags and cards, and ones you have permission to work with. Copying, changing, locking or emulating a tag that belongs to someone else, or using a tag to trick people, can be a crime.</p>
+<ul class="ticks"><li><b>Computer Misuse Act 1990.</b> Reading protected data, or changing, locking or wiping a tag or card, without the owner's permission can be an offence under sections 1 and 3. Only work on tags and cards you own or have permission to use.</li><li><b>Fraud Act 2006.</b> Using a copied or emulated tag to pretend to be someone else, to get into a place or service, or to trick people into opening a link, can be fraud by false representation (section 2). Making or supplying something for use in fraud is an offence under sections 6 and 7.</li></ul>
+<p class="after-table">Laws differ in other countries. If you are not in the UK, the rules where you are apply. Read the <a href="terms.html#law">terms of use</a>.</p>
+</div>
+</section>
+<section id="install" aria-labelledby="install-h">
+<div class="wrap">
+<h2 id="install-h">Installing and updating</h2>
+<p class="intro">Tagger is not on Google Play, so your phone asks a couple of extra questions the first time.</p>
+<ol class="steps"><li><h3>Download the app file</h3><p>Tap Download on your phone. The file is called Tagger.apk and is about 3.9 MB. If Chrome says the file might be harmful, choose Download anyway. First tick the box to say you will use the app within the law.</p></li><li><h3>Allow the install</h3><p>Open the file. The first time, Android asks you to allow your browser to install apps. Allow it, go back and tap Install. If Google Play Protect steps in, choose More details, then Install anyway.</p></li><li><h3>Updating later</h3><p>Settings, About, Check for updates opens the release notes in your browser. Install the new file over the old one and your saved tags, tasks and history are kept.</p></li></ol>
+<p class="after-table">Version 1.0.0, released 24 November 2026. See the <a href="releases.html">release notes</a>, or <a href="releases.html#checking">check your download</a>.</p>
+</div>
+</section>
+
+<section id="questions" aria-labelledby="questions-h">
+<div class="wrap">
+<h2 id="questions-h">Questions</h2>
+<div class="faq"><details><summary>Is Tagger really free?</summary><p>Yes. There is no paid version, no subscription and no adverts, and every tool, including automation, is free.</p></details><details><summary>Is it on Google Play?</summary><p>No. Tagger is a personal project and is downloaded from this site as an Android app file. It needs Android 10 or later and a phone with NFC.</p></details><details><summary>Which tags does it work with?</summary><p>It reads any tag your phone can read. Writing works on all NDEF tags. Passwords, the memory map, dumps and formatting work on NTAG and Ultralight tags, the ones almost everyone uses.</p></details><details><summary>Can it read my bank card?</summary><p>Only the public details any reader can see, such as the card type. Bank, transport and ID cards are protected, and Tagger does not try to get round that.</p></details><details><summary>Can it copy any card?</summary><p>No. Tagger copies what is stored on a tag to another tag, but a chip's own ID cannot be copied, and it does not crack MIFARE Classic keys.</p></details><details><summary>Do I need a second app to run tasks?</summary><p>No. Reading, writing and automation are all in Tagger.</p></details><details><summary>Why does it have internet access?</summary><p>Only for web-request and Wake-on-LAN steps you build into your own tasks. Every request is listed in Automate, Logs, Network. Nothing else goes online.</p></details><details><summary>What is power mode?</summary><p>Android does not let apps switch Wi-Fi, Bluetooth, mobile data or flight mode by themselves, so Tagger opens Android's own switch for you. With the free Shizuku app, power mode switches them silently. It is optional.</p></details><details><summary>Can I back up my tags and tasks?</summary><p>Yes. Settings, Backup saves an encrypted file, protected with a password you choose, wherever you pick.</p></details><details><summary>Does it work on an iPhone?</summary><p>No. Tagger is for Android phones and tablets only.</p></details><details><summary>Who made it?</summary><p>Tagger is made by Jonathan Jackson, an independent developer in the United Kingdom.</p></details></div>
+</div>
+</section>
+
+<section class="closing" aria-labelledby="closing-h">
+<div class="wrap">
+<div><h2 id="closing-h">Get more from every tag</h2><p>Free, with no adverts and nothing to unlock. Made by the developer of several other free Android apps: <a href="more-apps.html">see them all</a>.</p></div>
+<a class="button" href="./#download"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></svg>Download for Android</a>
+</div>
+</section>
+</main>
+<footer class="colophon">
+<div class="wrap">
+<div>
+<a class="brand" href="./" aria-label="Tagger home"><svg viewBox="0 0 108 108" aria-hidden="true"><defs><radialGradient id="tgg" cx="54" cy="40" r="80" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#17222E"/><stop offset="1" stop-color="#080B10"/></radialGradient></defs><rect width="108" height="108" rx="24" fill="url(#tgg)"/><g transform="translate(54 54) scale(1.25) translate(-54 -54)"><rect x="25" y="25" width="58" height="58" rx="9.5" fill="none" stroke="#2DE1C2" stroke-opacity="1" stroke-width="2.6"/><rect x="30" y="30" width="48" height="48" rx="7.6" fill="none" stroke="#2DE1C2" stroke-opacity=".9" stroke-width="2.6"/><rect x="35" y="35" width="38" height="38" rx="5.8" fill="none" stroke="#2DE1C2" stroke-opacity=".75" stroke-width="2.6"/><rect x="40" y="40" width="28" height="28" rx="4.2" fill="none" stroke="#2DE1C2" stroke-opacity=".6" stroke-width="2.6"/><rect x="47.8" y="47.8" width="12.4" height="12.4" rx="2.2" fill="#FFB547"/><rect x="51.6" y="51.6" width="4.8" height="4.8" rx="0.9" fill="#0B0F14"/></g></svg><span>Tagger</span></a>
+<p>&copy; 2026 Jonathan Jackson. Tagger is an independent app.</p>
+<p>This site uses no cookies and no tracking. The only script on it unlocks the download once the lawful-use box is ticked.</p>
+<p>Set in Bricolage Grotesque and Atkinson Hyperlegible.</p>
+</div>
+<nav aria-label="The app"><h2>The app</h2><ul>
+<li><a href="./">Home</a></li>
+<li><a href="./compare.html">Compare</a></li>
+<li><a href="./releases.html">Release notes</a></li>
+
+</ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul>
+<li><a href="./privacy.html">Privacy policy</a></li>
+<li><a href="./terms.html">Terms of use</a></li>
+<li><a href="./licences.html">Licences</a></li>
+</ul></nav>
+<nav aria-label="More"><h2>More</h2><ul>
+<li><a href="./more-apps.html">More apps</a></li>
+<li><a href="https://customgpter.github.io/">All apps</a></li>
+<li><a href="https://github.com/CustomGPTer/tagger/issues">Contact</a></li>
+</ul></nav>
+</div>
+</footer>
+</body>
+</html>
